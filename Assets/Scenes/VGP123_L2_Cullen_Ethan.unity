@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 30702288}
   - component: {fileID: 30702287}
   - component: {fileID: 30702286}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16468,7 +16468,7 @@ GameObject:
   - component: {fileID: 43779910}
   - component: {fileID: 43779912}
   - component: {fileID: 43779911}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16484,11 +16484,11 @@ Transform:
   m_GameObject: {fileID: 43779909}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.35, y: 2.98, z: 0}
+  m_LocalPosition: {x: -4.6626554, y: -0.19159317, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &43779911
 PlatformEffector2D:
@@ -16563,7 +16563,7 @@ GameObject:
   - component: {fileID: 188578996}
   - component: {fileID: 188578998}
   - component: {fileID: 188578997}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (17)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16579,11 +16579,11 @@ Transform:
   m_GameObject: {fileID: 188578995}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 200.93999, y: 0.93000007, z: 0}
+  m_LocalPosition: {x: 191.92734, y: -2.2415931, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &188578997
 PlatformEffector2D:
@@ -16660,8 +16660,9 @@ GameObject:
   - component: {fileID: 203159227}
   - component: {fileID: 203159226}
   - component: {fileID: 203159225}
+  - component: {fileID: 203159230}
   m_Layer: 0
-  m_Name: Sprite_Mario_21
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16726,6 +16727,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpForce: 7
+  groundCheckRadius: 0.02
+  isGroundLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  isGrounded: 0
 --- !u!50 &203159227
 Rigidbody2D:
   serializedVersion: 5
@@ -16752,7 +16759,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &203159228
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16817,12 +16824,34 @@ Transform:
   m_GameObject: {fileID: 203159224}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1640646, y: -0.81, z: 0}
+  m_LocalPosition: {x: 0.61, y: -0.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &203159230
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 203159224}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 48c9a3f1768cc9747a75e4321477ab17, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &218830453
 GameObject:
   m_ObjectHideFlags: 0
@@ -16834,7 +16863,7 @@ GameObject:
   - component: {fileID: 218830454}
   - component: {fileID: 218830456}
   - component: {fileID: 218830455}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16850,11 +16879,11 @@ Transform:
   m_GameObject: {fileID: 218830453}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 95.16, y: 0.99000025, z: 0}
+  m_LocalPosition: {x: 86.14735, y: -2.181593, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &218830455
 PlatformEffector2D:
@@ -16929,7 +16958,7 @@ GameObject:
   - component: {fileID: 311744936}
   - component: {fileID: 311744938}
   - component: {fileID: 311744937}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16945,11 +16974,11 @@ Transform:
   m_GameObject: {fileID: 311744935}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 100.3, y: 4, z: 0}
+  m_LocalPosition: {x: 91.287346, y: 0.8284068, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &311744937
 PlatformEffector2D:
@@ -17024,7 +17053,7 @@ GameObject:
   - component: {fileID: 318461843}
   - component: {fileID: 318461845}
   - component: {fileID: 318461844}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17040,11 +17069,11 @@ Transform:
   m_GameObject: {fileID: 318461842}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 52.03, y: 2.96, z: 0}
+  m_LocalPosition: {x: 43.01734, y: -0.21159315, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &318461844
 PlatformEffector2D:
@@ -17221,7 +17250,7 @@ GameObject:
   - component: {fileID: 420614500}
   - component: {fileID: 420614502}
   - component: {fileID: 420614501}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17237,11 +17266,11 @@ Transform:
   m_GameObject: {fileID: 420614499}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 133.81, y: 3, z: 0}
+  m_LocalPosition: {x: 124.79733, y: -0.17159319, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &420614501
 PlatformEffector2D:
@@ -17395,7 +17424,7 @@ GameObject:
   - component: {fileID: 453266094}
   - component: {fileID: 453266096}
   - component: {fileID: 453266095}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17411,11 +17440,11 @@ Transform:
   m_GameObject: {fileID: 453266093}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 104.93, y: 6.9900002, z: 0}
+  m_LocalPosition: {x: 95.91734, y: 3.818407, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &453266095
 PlatformEffector2D:
@@ -17610,7 +17639,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.04, y: 0, z: -10}
+  m_LocalPosition: {x: 0.04, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17627,7 +17656,7 @@ GameObject:
   - component: {fileID: 528391031}
   - component: {fileID: 528391033}
   - component: {fileID: 528391032}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17643,11 +17672,11 @@ Transform:
   m_GameObject: {fileID: 528391030}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 44.78, y: 2.93, z: 0}
+  m_LocalPosition: {x: 35.76734, y: -0.24159312, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &528391032
 PlatformEffector2D:
@@ -17884,7 +17913,7 @@ GameObject:
   - component: {fileID: 731063875}
   - component: {fileID: 731063877}
   - component: {fileID: 731063876}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17900,11 +17929,11 @@ Transform:
   m_GameObject: {fileID: 731063874}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 50.03, y: 5.8, z: 0}
+  m_LocalPosition: {x: 41.01734, y: 2.628407, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &731063876
 PlatformEffector2D:
@@ -17979,7 +18008,7 @@ GameObject:
   - component: {fileID: 953481082}
   - component: {fileID: 953481084}
   - component: {fileID: 953481083}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -17995,11 +18024,11 @@ Transform:
   m_GameObject: {fileID: 953481081}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 117.83, y: 12.02, z: 0}
+  m_LocalPosition: {x: 108.817345, y: 8.848408, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &953481083
 PlatformEffector2D:
@@ -18074,7 +18103,7 @@ GameObject:
   - component: {fileID: 967104887}
   - component: {fileID: 967104888}
   - component: {fileID: 967104889}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18090,28 +18119,11 @@ Transform:
   m_GameObject: {fileID: 967104886}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.07, y: -2.9, z: -0.35205668}
+  m_LocalPosition: {x: -9.012655, y: -3.1715932, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 43779910}
-  - {fileID: 1242795603}
-  - {fileID: 528391031}
-  - {fileID: 731063875}
-  - {fileID: 318461843}
-  - {fileID: 218830454}
-  - {fileID: 311744936}
-  - {fileID: 453266094}
-  - {fileID: 953481082}
-  - {fileID: 1244308814}
-  - {fileID: 420614500}
-  - {fileID: 1484747144}
-  - {fileID: 1572206391}
-  - {fileID: 1024314561}
-  - {fileID: 1284618173}
-  - {fileID: 1243212486}
-  - {fileID: 188578996}
-  m_Father: {fileID: 1055228741}
+  m_Children: []
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!68 &967104888
 EdgeCollider2D:
@@ -18186,7 +18198,7 @@ GameObject:
   - component: {fileID: 1024314561}
   - component: {fileID: 1024314563}
   - component: {fileID: 1024314562}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18202,11 +18214,11 @@ Transform:
   m_GameObject: {fileID: 1024314560}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 173.07999, y: 8.04, z: 0}
+  m_LocalPosition: {x: 164.06734, y: 4.868407, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1024314562
 PlatformEffector2D:
@@ -18302,7 +18314,7 @@ Transform:
   - {fileID: 426741821}
   - {fileID: 1545337386}
   - {fileID: 688777156}
-  - {fileID: 967104887}
+  - {fileID: 2138161373}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1085854915
@@ -18463,7 +18475,7 @@ GameObject:
   - component: {fileID: 1242795603}
   - component: {fileID: 1242795605}
   - component: {fileID: 1242795604}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18479,11 +18491,11 @@ Transform:
   m_GameObject: {fileID: 1242795602}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 33.16, y: 1.0100001, z: 0}
+  m_LocalPosition: {x: 24.147345, y: -2.161593, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1242795604
 PlatformEffector2D:
@@ -18558,7 +18570,7 @@ GameObject:
   - component: {fileID: 1243212486}
   - component: {fileID: 1243212488}
   - component: {fileID: 1243212487}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (16)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18574,11 +18586,11 @@ Transform:
   m_GameObject: {fileID: 1243212485}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 200.15999, y: 2.97, z: 0}
+  m_LocalPosition: {x: 191.14734, y: -0.20159316, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1243212487
 PlatformEffector2D:
@@ -18653,7 +18665,7 @@ GameObject:
   - component: {fileID: 1244308814}
   - component: {fileID: 1244308816}
   - component: {fileID: 1244308815}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18669,11 +18681,11 @@ Transform:
   m_GameObject: {fileID: 1244308813}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 125.99, y: 1.0100001, z: 0}
+  m_LocalPosition: {x: 116.97734, y: -2.161593, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1244308815
 PlatformEffector2D:
@@ -18849,7 +18861,7 @@ GameObject:
   - component: {fileID: 1284618173}
   - component: {fileID: 1284618175}
   - component: {fileID: 1284618174}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (15)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -18865,11 +18877,11 @@ Transform:
   m_GameObject: {fileID: 1284618172}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 187.75, y: 11.040001, z: 0}
+  m_LocalPosition: {x: 178.73735, y: 7.8684072, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1284618174
 PlatformEffector2D:
@@ -22307,7 +22319,7 @@ GameObject:
   - component: {fileID: 1484747144}
   - component: {fileID: 1484747146}
   - component: {fileID: 1484747145}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22323,11 +22335,11 @@ Transform:
   m_GameObject: {fileID: 1484747143}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 142.98999, y: 2.98, z: 0}
+  m_LocalPosition: {x: 133.97734, y: -0.19159317, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1484747145
 PlatformEffector2D:
@@ -22558,7 +22570,7 @@ GameObject:
   - component: {fileID: 1572206391}
   - component: {fileID: 1572206393}
   - component: {fileID: 1572206392}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -22574,11 +22586,11 @@ Transform:
   m_GameObject: {fileID: 1572206390}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 165.06999, y: 4.98, z: 0}
+  m_LocalPosition: {x: 156.05734, y: 1.8084068, z: -0.23161459}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 967104887}
+  m_Father: {fileID: 2138161373}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!251 &1572206392
 PlatformEffector2D:
@@ -22676,13 +22688,62 @@ Transform:
   - {fileID: 1236341652}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2138161372
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2138161373}
+  m_Layer: 0
+  m_Name: Edges
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2138161373
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138161372}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 14.082655, y: 0.2715931, z: -0.12044209}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 967104887}
+  - {fileID: 43779910}
+  - {fileID: 1242795603}
+  - {fileID: 528391031}
+  - {fileID: 731063875}
+  - {fileID: 318461843}
+  - {fileID: 218830454}
+  - {fileID: 311744936}
+  - {fileID: 453266094}
+  - {fileID: 953481082}
+  - {fileID: 1244308814}
+  - {fileID: 420614500}
+  - {fileID: 1484747144}
+  - {fileID: 1572206391}
+  - {fileID: 1024314561}
+  - {fileID: 1284618173}
+  - {fileID: 1243212486}
+  - {fileID: 188578996}
+  m_Father: {fileID: 1055228741}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 619394802}
-  - {fileID: 1085854917}
-  - {fileID: 2066616778}
   - {fileID: 203159229}
+  - {fileID: 1085854917}
   - {fileID: 1055228741}
+  - {fileID: 2066616778}
