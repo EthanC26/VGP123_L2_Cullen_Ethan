@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
 
     //attacks
-    public bool Attacking = false;
+    private bool Attacking = false;
+    private bool jAttacking = false;
     //attack timers
     private float attackTimer = 1;
-    public float elapsedTime = 0;//make private
+    private float elapsedTime = 0;//make private
 
     //gorundcheck variables
     [Range(0.01f, 0.1f)]
@@ -60,12 +61,14 @@ public class PlayerController : MonoBehaviour
         //sprite flip
         if (hInput != 0) sr.flipX = (hInput < 0);
         //if (hInput > 0 && sr.flipX || hInput < 0 && !sr.flipX) sr.flipX = !sr.flipX;
-
+        
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("speed", Mathf.Abs ( hInput));
-        anim.SetBool("Attacking", Attacking);
+        anim.SetBool("groundAttack", Attacking);
+        anim.SetBool("jumpAttack", jAttacking);
+
         
-        //attack (with attack timer)
+        //groundattack 
         if (Input.GetButtonDown ("groundAttack"))
             if (elapsedTime > attackTimer)
             {
@@ -73,10 +76,21 @@ public class PlayerController : MonoBehaviour
 
                 elapsedTime = 0;
             }
-     
-        if (elapsedTime >= 1)
+        //jumpattack 
+        if (Input.GetButtonDown ("jumpAttack"))
+            if (elapsedTime > attackTimer)
             {
-                Attacking = false;
+                jAttacking = true;
+
+                elapsedTime = 0;
+            }
+
+     //attack ending
+        if (elapsedTime >= 0.5)
+            {
+            Attacking = false;
+
+            jAttacking = false;
             }
 
         //timer

@@ -491,7 +491,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_9
+      name: mariojumpattack1
       rect:
         serializedVersion: 2
         x: 167
@@ -513,7 +513,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_10
+      name: mariojumpattack2
       rect:
         serializedVersion: 2
         x: 185
@@ -1217,7 +1217,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_42
+      name: mariojumpattack3
       rect:
         serializedVersion: 2
         x: 428
@@ -1693,7 +1693,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Sprite_Mario_0: -1570081979
-      Sprite_Mario_10: 35205082
       Sprite_Mario_11: -25133316
       Sprite_Mario_12: 2064087436
       Sprite_Mario_13: 203155179
@@ -1725,7 +1724,6 @@ TextureImporter:
       Sprite_Mario_39: -902958876
       Sprite_Mario_40: 611715857
       Sprite_Mario_41: 1638327921
-      Sprite_Mario_42: -1340631751
       Sprite_Mario_43: 1766443470
       Sprite_Mario_44: -1529414948
       Sprite_Mario_45: -1028266424
@@ -1743,13 +1741,15 @@ TextureImporter:
       Sprite_Mario_6: 1008645529
       Sprite_Mario_60: -1015857356
       Sprite_Mario_7: 207481402
-      Sprite_Mario_9: 1241528849
       mario: -1490152
       marioattack1: -405402093
       marioattack2: 842857087
       marioattack3: -2054878375
       marioidel: -430155802
       mariojump: 1099887781
+      mariojumpattack1: 1241528849
+      mariojumpattack2: 35205082
+      mariojumpattack3: -1340631751
       mariowalk1: -521146147
       mariowalk2: -1389518164
       mariowalk3: -867899457
