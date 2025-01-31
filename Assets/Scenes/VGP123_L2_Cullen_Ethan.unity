@@ -16728,6 +16728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 7
+  Attacking: 0
+  elapsedTime: 0
   groundCheckRadius: 0.02
   isGroundLayer:
     serializedVersion: 2

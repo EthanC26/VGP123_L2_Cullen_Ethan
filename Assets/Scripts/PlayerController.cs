@@ -6,12 +6,18 @@ public class PlayerController : MonoBehaviour
     //movement variables
     [Range(3, 10)]
     public float speed = 5.0f;
-    public float jumpForce = 7.0f;
+    public float jumpForce = 8.0f;
     
     //component refs
     private Animator anim;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
+
+    //attacks
+    public bool Attacking = false;
+    //attack timers
+    private float attackTimer = 1;
+    public float elapsedTime = 0;//make private
 
     //gorundcheck variables
     [Range(0.01f, 0.1f)]
@@ -28,7 +34,7 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
 
-        if (jumpForce < 0) jumpForce = 7;
+        if (jumpForce < 0) jumpForce = 8;
 
         //groundcheck initaliztion
         GameObject newGameObject = new GameObject();
@@ -42,6 +48,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         CheckIsGrounded();
+        
 
         float hInput = Input.GetAxis("Horizontal");
 
@@ -56,6 +63,24 @@ public class PlayerController : MonoBehaviour
 
         anim.SetBool("isGrounded", isGrounded);
         anim.SetFloat("speed", Mathf.Abs ( hInput));
+        anim.SetBool("Attacking", Attacking);
+        
+        //attack (with attack timer)
+        if (Input.GetButtonDown ("groundAttack"))
+            if (elapsedTime > attackTimer)
+            {
+                Attacking = true;
+
+                elapsedTime = 0;
+            }
+     
+        if (elapsedTime >= 1)
+            {
+                Attacking = false;
+            }
+
+        //timer
+        elapsedTime += Time.deltaTime;
     }
 
     void CheckIsGrounded()
